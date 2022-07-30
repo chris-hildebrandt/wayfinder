@@ -10,27 +10,31 @@ export class Trip {
 
   get Template() {
     return `
-      <div class="container bg-light">
+      <div class="container bg-light bg-glass rounded m-2 pt-4">
         <ul class="nav nav-tabs">
         </ul>
-        <div class="row text-center">
-            <p class="col-1 d-none d-md-inline">Type</p>
-            <p class="col-2 d-none d-md-inline">Name</p>
-            <p class="col-3 d-none d-md-inline">Confirmation Number</p>
-            <p class="col-3 d-none d-md-inline">Address</p>
-            <p class="col-2 d-none d-md-inline">Date</p>
-            <p class="col-1 d-none d-md-inline">Cost</p>
+        <div class="row text-center font-custom2">
+            <h4 class="col-1 d-none d-md-inline">Type</h4>
+            <h4 class="col-2 d-none d-md-inline">Name</h4>
+            <h4 class="col-3 d-none d-md-inline">Confirmation Number</h4>
+            <h4 class="col-3 d-none d-md-inline">Address</h4>
+            <h4 class="col-2 d-none d-md-inline">Date</h4>
+            <h4 class="col-1 d-none d-md-inline">Cost</h4>
         </div>
         <section id="reservations" name="reservations">
           ${this.ReservationsTemplate}
         </section>
-        <form class="row" onsubmit="app.reservationsController.createReservation('${this.id}')"></form>
-        <section class="row"></section>
+        <form class="">
+          <div class="d-flex justify-content-end">
+            <button class="btn mdi mdi-md mdi-plus-box mx-4" onsubmit="app.reservationsController.createReservation('${this.id}')"></button>
+          </div>
+        </form>
         <div class="col-6">Notes</div>
-        <textarea class="col-10 col-md-6" name="notes" id="notes" cols="30" rows="4"></textarea>
-        <div>
-          <button class="btn col-1" onclick="app.tripsController.deleteTrip('${this.id}')">Delete Trip</button>
-          <section class="col-1 offset-10"> Total Cost: $<span>0</span></section>
+        <textarea class="col-10 col-md-6" name="notes" id="notes" cols="30" rows="4"onblur="app.tripsController.editTrip('${this.id}')"></textarea>
+        // TODO write edit function
+        <div class="p-2 d-flex">
+          <button class="btn btn-danger p-2" onclick="app.tripsController.deleteTrip('${this.id}')">Delete Trip</button>
+          <section class="p-2 ms-auto"> Total Cost: $<span>0</span></section>
         </div>
       </div>
     `
