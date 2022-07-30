@@ -14,7 +14,7 @@ export class Reservation {
 
   get Template() {
     return `
-      <div class="row text-center">
+      <div class="row text-center reservation rounded">
         <p class="col-1">${this.type}</p>
         <p class="col-2">${this.name}</p>
         <p class="col-3">${this.confirmationNumber}</p>

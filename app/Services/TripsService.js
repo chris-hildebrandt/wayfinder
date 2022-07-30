@@ -8,7 +8,6 @@ class TripsService{
   createTrip(newTrip){
     console.log("creating party in service");
     ProxyState.trips = [...ProxyState.trips, new Trip(newTrip)]
-    console.log(ProxyState.trips);
   }
 
   deleteTrip(id){

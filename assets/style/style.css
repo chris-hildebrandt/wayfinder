@@ -6,8 +6,12 @@
 }
 
 
-nav {
+.font-custom {
   font-family: 'Edu VIC WA NT Beginner', cursive;
+}
+
+.font-custom2 {
+  font-family: 'Baloo 2', cursive;
 }
 
 .hero-img{
@@ -15,7 +19,7 @@ nav {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 90vh;
+  height: auto;
 }
 
 #new-trip{
@@ -32,4 +36,17 @@ nav {
 
 .add-btn{
   transform: scale(2);
+}
+
+.bg-glass {
+  --bs-bg-opacity: .9;
+  width: 80vw;
+}
+
+.mdi-md {
+  transform: scale(1.5);
+}
+
+.reservation {
+  background-color: var(--md);
 }
