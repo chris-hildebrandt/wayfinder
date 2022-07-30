@@ -11,6 +11,10 @@ class TripsService{
     console.log(ProxyState.trips);
   }
 
+  deleteTrip(id){
+  ProxyState.trips = ProxyState.trips.filter(t => t.id != id)
+  ProxyState.reservations = ProxyState.reservations.filter(r => r.tripId != id)
+  }
 }
 
 export const tripsService = new TripsService()

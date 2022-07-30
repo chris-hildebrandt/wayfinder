@@ -1,4 +1,5 @@
 import { ProxyState } from "../AppState.js";
+import { tripsService } from "../Services/TripsService.js";
 import { Pop } from "../Utils/Pop.js"
 
 
@@ -11,8 +12,12 @@ function _draw(){
 export class TripsController{
   constructor(){
     console.log("Trips Ctor up");
+    ProxyState.on("trips", _draw)
+
     _draw()
   }
+
+
 
   createTrip(){
     window.event.preventDefault()
@@ -22,5 +27,11 @@ export class TripsController{
     }
     tripsService.createTrip(newTrip)
     Pop.toast('Trip Created!', 'success')
+  }
+
+  async deleteTrip(id){
+      if(await Pop.confirm("Delete Trip?")){
+        tripsService.deleteTrip(id)
+    }
   }
 }

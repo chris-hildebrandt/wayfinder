@@ -7,6 +7,8 @@ class AppState extends EventEmitter {
   /** @type {import('./Models/Value').Value[]} */
   values = []
 
+  navTabs = ""
+
   /** @type {import('./Models/Trip').Trip[]} */
   trips = [
     new Trip({
