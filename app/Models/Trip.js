@@ -50,7 +50,7 @@ export class Trip {
 
   get ReservationsTemplate() {
     let template = ''
-    let reservations = ProxyState.reservations.filter(r => r.tripId == this.id)
+    let reservations = ProxyState.reservations.filter(r => r.tripId == this.id).sort((a, b) => a.date -b.date)
     reservations.forEach(r => template += r.Template)
     if (template) {
       return template
