@@ -11,9 +11,11 @@ function _draw(){
 
 export class TripsController{
   constructor(){
-    console.log("Trips Ctor up");
     ProxyState.on("trips", _draw)
-
+    ProxyState.on("reservations", _draw)
+    ProxyState.on("trips", save)
+    ProxyState.on("reservations", save)
+    load()
     _draw()
   }
 
@@ -33,5 +35,11 @@ export class TripsController{
       if(await Pop.confirm("Delete Trip?")){
         tripsService.deleteTrip(id)
     }
+  }
+
+  editTrip(id){
+    console.log("editing", id);
+    let newNotes = window.target.value
+    tripsService.editTrip(id, newNotes)
   }
 }
