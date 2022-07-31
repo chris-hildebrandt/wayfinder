@@ -1,8 +1,6 @@
 import { ProxyState } from "../AppState.js"
 import { Trip } from "../Models/Trip.js"
 
-
-
 class TripsService{
 
   createTrip(newTrip){
@@ -13,6 +11,12 @@ class TripsService{
   deleteTrip(id){
   ProxyState.trips = ProxyState.trips.filter(t => t.id != id)
   ProxyState.reservations = ProxyState.reservations.filter(r => r.tripId != id)
+  }
+
+  editTrip(newNotes, id){
+    let trip = ProxyState.trips.find(t => t.id == id)
+    trip.notes = newNotes
+    ProxyState.trips = ProxyState.trips
   }
 }
 

@@ -31,10 +31,9 @@ export class Trip {
         </form>
         <div class="col-6">Notes</div>
         <textarea class="col-10 col-md-6" name="notes" id="notes" cols="30" rows="4"onblur="app.tripsController.editTrip('${this.id}')"></textarea>
-        // TODO write edit function
         <div class="p-2 d-flex">
           <button class="btn btn-danger p-2" onclick="app.tripsController.deleteTrip('${this.id}')">Delete Trip</button>
-          <section class="p-2 ms-auto"> Total Cost: $<span>0</span></section>
+          <section class="p-2 ms-auto"> Total Cost: $${this.TripTotal}</section>
         </div>
       </div>
     `
