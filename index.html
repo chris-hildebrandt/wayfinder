@@ -42,7 +42,7 @@
             <form id="new-trip-form" onsubmit="app.tripsController.createTrip()">
               <div class="mb-3">
                 <label for="title" class="form-label">What do you want to name your awesome trip?</label>
-                <input type="text" minlength="3" maxlength="15" class="form-control" id="title" name="title">
+                <input type="text" minlength="3" maxlength="15" required class="form-control" id="title" name="title">
                 <div class="form-text">Will this be business or pleasure? or both!</div>
               </div>
               <div class="mb-3 form-check-inline">
@@ -62,8 +62,6 @@
         </div>
       </div>
     </div>
-    <!-- STUB trips area -->
-    
     <section id="trips" name="trips" class="trips row align-items-center justify-content-center mt-3">
 
       <!-- STUB reservations area -->

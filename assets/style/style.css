@@ -2,7 +2,7 @@
 :root {
   --dark: #112D4E; 
   --md: #3F72AF;
-  --light:  #DBE2EF;
+  --light:  #bbd0df;
 }
 
 
@@ -27,7 +27,7 @@
 }
 
 .tab{
-  background: var(--light);
+  background: white;
 }
 
 .text-shadow{
@@ -48,5 +48,6 @@
 }
 
 .reservation {
-  background-color: var(--md);
+  background-color: var(--light);
+  
 }

@@ -26,25 +26,25 @@ export class Trip {
         </section>
         <form>
           <section class="row">
-            <select class="form-select col col-md-1" id="type" name="type" required>
+            <select class="form-select-inline col-6 col-md-1 rounded m-1" id="type" name="type" required>
               <option selected>Type...</option>
               <option value="✈️">✈️ Flight</option>
               <option value="🚗">🚗 Vehicle</option>
               <option value="🏨">🏨 Hotel</option>
             </select>
-            <div class="col col-md-2">
+            <div class="col-6 col-md-2 m-1">
               <input type="text" class="form-control" id="name" name="name"required placeholder="Name..." aria-label="name">
             </div>
-            <div class="col col-md-3">
+            <div class="col-6 col-md-3 m-1">
               <input type="text" class="form-control" id="confirmation" name="confirmation"required placeholder="Confirmation...">
             </div>
-            <div class="col col-md-3">
+            <div class="col-6 col-md-3 m-1">
               <input type="address" class="form-control" id="address" name="address" required placeholder="Address..." aria-label="address">
             </div>
-            <div class="col col-md-2">
+            <div class="col-6 col-md-2 m-1">
               <input type="date" class="form-control" id="date" name="date" required>
             </div>
-            <div class="col col-md-1">
+            <div class="col-6 col-md-1 m-1">
               <input type="cost" class="form-control" id="cost" name="cost" required placeholder="$0.00" aria-label="cost">
             </div>
             <div class="">
