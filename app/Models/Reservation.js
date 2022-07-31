@@ -14,14 +14,14 @@ export class Reservation {
 
   get Template() {
     return `
-      <div class="row text-center reservation rounded shadow my-3 mx-1">
-        <p class="col-1">${this.type}</p>
-        <p class="col-2">${this.name}</p>
-        <p class="col-3">${this.confirmation}</p>
-        <p class="col-3">${this.address}</p>
-        <p class="col-2">${this.date.toDateString()}</p>
-        <p class="col-1">${this.cost}</p>
-        <button class="btn mdi mdi-trash-can-outline" onclick="app.reservationsController.deleteReservation('${this.id}')"></button>
+      <div class="row text-center d-flex reservation border border-primary rounded p-0 shadow my-3 mx-1">
+        <p class="col-1 col-md-1 pt-3">${this.type}</p>
+        <p class="col-6 col-md-2 pt-3">${this.name}</p>
+        <p class="col-4 col-md-2 pt-3">${this.confirmation}</p>
+        <p class="col-12 col-md-3 pt-3 text-md-end">${this.address}</p>
+        <p class="col-6 col-md-2 pt-3">${this.date.toLocaleDateString('en-US')}</p>
+        <p class="col-6 col-md-1 pt-3">$${this.cost.toFixed(2)}</p>
+        <button class="col-1 order-7 btn mdi mdi-trash-can-outline" onclick="app.reservationsController.deleteReservation('${this.id}')"></button>
       </div>
     `
   }

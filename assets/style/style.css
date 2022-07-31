@@ -1,8 +1,19 @@
 /* BASIC STYLES HERE */
 :root {
-  --dark: #112D4E; 
-  --md: #3F72AF;
-  --light:  #bbd0df;
+  --bg-dark: #112D4E; 
+  --bg-md: #3F72AF;
+  --bg-light:  #a1ccda;
+  --hue: 220;
+  --sat: 100;
+  --light: 80;
+  --threshold: 50;
+
+}
+
+.trip-bar{
+  background: hsl(var(--hue), calc(var(--sat)* 1%), calc(var(--light)* 1%));
+  --switch: calc((var(--light) - var(--threshold)) * -100%); 
+  color: hsl(0, 0%, var(--switch));
 }
 
 
@@ -48,6 +59,10 @@
 }
 
 .reservation {
-  background-color: var(--light);
-  
+  background-color: var(--bg-light);
+  --bs-border-opacity: .25 !important;
+}
+
+.text-blue {
+  color: var(--bg-md)
 }
