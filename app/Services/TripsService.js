@@ -13,7 +13,7 @@ class TripsService{
   ProxyState.reservations = ProxyState.reservations.filter(r => r.tripId != id)
   }
 
-  editTrip(newNotes, id){
+  editTrip(id, newNotes){
     let trip = ProxyState.trips.find(t => t.id == id)
     trip.notes = newNotes
     ProxyState.trips = ProxyState.trips

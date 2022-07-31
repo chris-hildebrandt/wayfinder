@@ -39,8 +39,7 @@ export class TripsController{
   }
 
   editTrip(id){
-    console.log("editing", id);
-    let newNotes = window.target.value
+    let newNotes = window.event.target.value
     tripsService.editTrip(id, newNotes)
   }
 }

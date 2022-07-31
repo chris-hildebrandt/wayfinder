@@ -29,31 +29,31 @@ class AppState extends EventEmitter {
 
   reservations = [
     new Reservation({
-      type: "Flight", 
+      type: "✈️", 
       name: "UA-1234", 
-      confirmationNumber: "JKEVDA", 
+      confirmation: "JKEVDA", 
       address: "3201 W Airport Way, Boise, ID", 
-      date: 4/22/22, 
+      date: "04/25/2022", 
       cost: 587,
       tripId: 22
     }),
 
     new Reservation({
-      type: "Hotel",
+      type: "🏨",
       name: "Disneyland Hotel",
-      confirmationNumber: "95331559",
+      confirmation: "95331559",
       address: "1150 Magic Way, Anaheim, CA",
-      date: 4/23/22,
+      date: "04/23/2022",
       cost: 782,
       tripId: 22
     }),
 
     new Reservation({
-      type: "Rental", 
+      type: "🚗", 
       name: "canoo Rental", 
-      confirmationNumber: "LA395MS", 
+      confirmation: "LA395MS", 
       address: "451 s 100 e Hyrum, UT", 
-      date: 4/22/22, 
+      date: "04/22/2022", 
       cost: 2546,
       tripId: 15
     }),

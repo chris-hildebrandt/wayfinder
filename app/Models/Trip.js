@@ -24,13 +24,36 @@ export class Trip {
         <section id="reservations" name="reservations">
           ${this.ReservationsTemplate}
         </section>
-        <form class="">
-          <div class="d-flex justify-content-end">
-            <button class="btn mdi mdi-md mdi-plus-box mx-4" onsubmit="app.reservationsController.createReservation('${this.id}')"></button>
-          </div>
+        <form>
+          <section class="row">
+            <select class="form-select col col-md-1" id="type" name="type" required>
+              <option selected>Type...</option>
+              <option value="✈️">✈️ Flight</option>
+              <option value="🚗">🚗 Vehicle</option>
+              <option value="🏨">🏨 Hotel</option>
+            </select>
+            <div class="col col-md-2">
+              <input type="text" class="form-control" id="name" name="name"required placeholder="Name..." aria-label="name">
+            </div>
+            <div class="col col-md-3">
+              <input type="text" class="form-control" id="confirmation" name="confirmation"required placeholder="Confirmation...">
+            </div>
+            <div class="col col-md-3">
+              <input type="address" class="form-control" id="address" name="address" required placeholder="Address..." aria-label="address">
+            </div>
+            <div class="col col-md-2">
+              <input type="date" class="form-control" id="date" name="date" required>
+            </div>
+            <div class="col col-md-1">
+              <input type="cost" class="form-control" id="cost" name="cost" required placeholder="$0.00" aria-label="cost">
+            </div>
+            <div class="">
+              <button class="btn mdi mdi-md mdi-plus-box mx-4" onsubmit="app.reservationsController.createReservation('${this.id}')"></button>
+            </div>
+          </section>
         </form>
         <div class="col-6">Notes</div>
-        <textarea class="col-10 col-md-6" name="notes" id="notes" cols="30" rows="4"onblur="app.tripsController.editTrip('${this.id}')"></textarea>
+        <textarea class="col-10 col-md-6" name="notes" id="notes" cols="30" rows="4" placeholder="Write notes here" onblur="app.tripsController.editTrip('${this.id}')">${this.notes}</textarea>
         <div class="p-2 d-flex">
           <button class="btn btn-danger p-2" onclick="app.tripsController.deleteTrip('${this.id}')">Delete Trip</button>
           <section class="p-2 ms-auto"> Total Cost: $${this.TripTotal}</section>

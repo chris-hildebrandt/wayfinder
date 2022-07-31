@@ -13,9 +13,9 @@ export class ReservationsController{
     let newReservation = {
       type: form.type.value,
       name: form.name.value,
-      confirmationNumber: form.confirmationNumber.value,
+      confirmation: form.confirmation.value,
       address: form.address.value,
-      date: form.date.value,
+      date: Date.parse(form.date.value),
       cost: parseInt(form.cost.value)
     }
     reservationsService.createReservation(newReservation)
