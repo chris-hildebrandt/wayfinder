@@ -21,6 +21,7 @@ export class Reservation {
         <p class="col-3">${this.address}</p>
         <p class="col-2">${this.date}</p>
         <p class="col-1">${this.cost}</p>
+        <button class="btn mdi mdi-trash-can-outline" onclick="app.reservationsController.deleteReservation('${this.id}')"></button>
       </div>
     `
   }

@@ -1,3 +1,4 @@
+import { reservationsService } from "../Services/ReservationsService.js";
 import { Pop } from "../Utils/Pop.js";
 
 
@@ -19,5 +20,11 @@ export class ReservationsController{
     }
     reservationsService.createReservation(newReservation)
     Pop.toast('Reservation Created!', 'success')
+  }
+
+  async deleteReservation(id){
+    if(await Pop.confirm("Remove Reservation?")){
+      reservationsService.deleteReservation(id)
+    }
   }
 }
