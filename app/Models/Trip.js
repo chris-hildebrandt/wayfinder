@@ -11,7 +11,7 @@ export class Trip {
 
   get Template() {
     return `
-      <div class="container bg-light bg-glass rounded m-2">
+      <div class="container bg-white bg-glass rounded m-2">
         <div class="row fluid text-center font-custom2 rounded p-1 trip-bar">
             <h4 class="col-1 d-none d-md-inline">Type</h4>
             <h4 class="col-2 d-none d-md-inline">Name</h4>
@@ -29,6 +29,9 @@ export class Trip {
             <option selected>Type...</option>
             <option value="✈️">✈️ Flight</option>
             <option value="🚗">🚗 Vehicle</option>
+            <option value="🏨">🏨 Hotel</option>
+            <option value="🍽️">🍽️ Restaurant</option>
+            <option value="🎡">🎡 Vehicle</option>
             <option value="🏨">🏨 Hotel</option>
           </select>
           <div class="col-6 col-md-2 m-1">
