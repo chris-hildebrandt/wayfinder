@@ -8,14 +8,14 @@ export class Reservation {
       this.confirmation = data.confirmation,
       this.address = data.address,
       this.date = new Date(data.date),
-      this.cost = data.cost
+      this.cost = data.cost || 0
       this.tripId = data.tripId
   }
 
   get Template() {
     return `
       <div class="row text-center d-flex reservation border border-primary rounded p-0 shadow my-3 mx-1">
-        <p class="col-1 col-md-1 pt-3">${this.type}</p>
+        <p class="col-1 col-md-1 pt-3 mdi-md">${this.type}</p>
         <p class="col-6 col-md-2 pt-3">${this.name}</p>
         <p class="col-4 col-md-2 pt-3">${this.confirmation}</p>
         <p class="col-12 col-md-3 pt-3 text-md-end">${this.address}</p>

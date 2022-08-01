@@ -14,7 +14,7 @@ export class ReservationsController{
       name: form.name.value,
       confirmation: form.confirmation.value,
       address: form.address.value,
-      date: Date.parse(form.date.value),
+      date: Date(form.date.value.replace(/-/g, "/")),
       cost: parseInt(form.cost.value),
       tripId: tripId
     }

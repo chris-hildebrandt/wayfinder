@@ -26,7 +26,8 @@ export class TripsController{
     window.event.preventDefault()
     let form = window.event.target
     let newTrip = {
-      title: form.title.value
+      title: form.title.value,
+      color: form.color.value
     }
     tripsService.createTrip(newTrip)
     Pop.toast('Trip Created!', 'success')
@@ -41,5 +42,14 @@ export class TripsController{
   editTrip(id){
     let newNotes = window.event.target.value
     tripsService.editTrip(id, newNotes)
+  }
+
+  editColor(id){
+    let color = window.event.target.value
+    tripsService.editColor(id, color)
+  }
+
+  toggleCollapse(tripId){
+    tripsService.toggleCollapse(tripId)
   }
 }

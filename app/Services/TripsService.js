@@ -18,6 +18,18 @@ class TripsService{
     trip.notes = newNotes
     ProxyState.trips = ProxyState.trips
   }
+
+  editColor(id, color){
+    let trip = ProxyState.trips.find(t => t.id == id)
+    trip.color = color
+    ProxyState.trips = ProxyState.trips
+  }
+
+  toggleCollapse(tripId){
+    let trip = ProxyState.trips.find(t => t.id == tripId)
+    trip.collapsed = !trip.collapsed
+    ProxyState.trips = ProxyState.trips
+  }
 }
 
 export const tripsService = new TripsService()
