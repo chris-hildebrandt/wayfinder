@@ -6,6 +6,8 @@ export class ReservationsController{
   constructor(){
   }
 
+  // let dateFormat = form.date.value.replace(/-/g, "/")
+
   createReservation(tripId){
     window.event.preventDefault()
     let form = window.event.target
@@ -14,7 +16,7 @@ export class ReservationsController{
       name: form.name.value,
       confirmation: form.confirmation.value,
       address: form.address.value,
-      date: Date(form.date.value.replace(/-/g, "/")),
+      date: Date.parse(form.date.value),
       cost: parseInt(form.cost.value),
       tripId: tripId
     }

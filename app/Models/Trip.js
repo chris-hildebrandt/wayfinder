@@ -6,7 +6,7 @@ export class Trip {
     this.id = data.id || generateId(),
       this.title = data.title,
       this.notes = data.notes
-    this.color = data.color
+    this.color = data.color || "#85D5D0"
     this.collapsed = data.collapsed || true
   }
 
@@ -69,7 +69,7 @@ export class Trip {
         <textarea class="col-10 col-md-6" name="notes" id="notes" cols="30" rows="4" placeholder="Write notes here" onblur="app.tripsController.editTrip('${this.id}')">${this.notes}</textarea>
         <div class="p-2 d-flex">
           <button class="btn btn-danger p-2" onclick="app.tripsController.deleteTrip('${this.id}')">Delete Trip</button>
-          <section class="p-2 ms-auto"> Total Cost: $${this.TripTotal.toFixed(2)}</section>
+          <h4 class="p-2 ms-auto"> Total Cost: $${this.TripTotal.toFixed(2)}</h4>
         </div>
       </div>
     </section>

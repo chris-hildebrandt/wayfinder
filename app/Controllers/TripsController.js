@@ -27,7 +27,6 @@ export class TripsController{
     let form = window.event.target
     let newTrip = {
       title: form.title.value,
-      color: form.color.value
     }
     tripsService.createTrip(newTrip)
     Pop.toast('Trip Created!', 'success')
